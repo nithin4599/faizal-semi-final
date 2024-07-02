@@ -591,6 +591,7 @@ button, a { transition: var(--transition); }
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+  margin-left: -35px;
 }
 
 .service-card {
@@ -845,7 +846,7 @@ button, a { transition: var(--transition); }
   flex-wrap: wrap;
   justify-content: center;
   gap: 50px 20px;
-  margin-left: -30px;
+  margin-left: -35px;
 }
 
 .features-list > li { width: calc(50% - 10px); }
