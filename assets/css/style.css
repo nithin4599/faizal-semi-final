@@ -208,7 +208,7 @@ button, a { transition: var(--transition); }
   font-size: var(--fs-5);
   font-weight: var(--fw-600);
   padding: 5px 20px;
-  background: hsla(9, 100%, 62%, 0.1);
+  background: hsl(0, 0%, 100%);
   width: max-content;
   border-radius: 50px;
   margin-inline: auto;
@@ -1604,6 +1604,7 @@ button, a { transition: var(--transition); }
     top: -94px;
     margin-top: -20px;
     padding-block: 20px;
+   
     box-shadow: 0 10px 50px hsla(237, 71%, 52%, 0.2);
     animation: slideDown 0.25s ease-out forwards;
   }
