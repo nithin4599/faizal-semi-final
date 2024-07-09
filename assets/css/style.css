@@ -448,7 +448,7 @@ button, a { transition: var(--transition); }
 
 .hero {
 
-  background: var(--cultured-2);
+  background: rgb(rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255));
   padding-block: var(--section-padding);
   margin-top: -120px;
 }
