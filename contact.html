@@ -104,54 +104,18 @@
         height: 300px; /* Adjust height for smaller screens */
       }
     }
+    /* Loading Spinner Styles */
+    .spinner {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   </style>
 </head>
 
 <body>
-
-  <!-- Header -->
-  <!-- <nav class="navbar" data-navbar>
-
-    <div class="navbar-top">
-  
-      <a class="logo">
-        <img src="./assets/images/logo.png" alt="logo">
-      </a>
-  
-      <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
-        <ion-icon name="close-outline"></ion-icon>
-      </button>
-  
-    </div>
-  
-    <div class="navbar-bottom">
-      <ul class="navbar-list">
-  
-        <li>
-          <a href="#home" class="navbar-link" data-nav-link>Home</a>
-        </li>
-  
-        <li>
-          <a href="#about" class="navbar-link" data-nav-link>About</a>
-        </li>
-        <li>
-          <a href="#expertise" class="navbar-link" data-nav-link>Expertise</a>
-        </li>
-        <li>
-          <a href="#service" class="navbar-link" data-nav-link>Service</a>
-        </li>
-        <li>
-          <a href="#blog" class="navbar-link" data-nav-link>Our Work</a>
-        </li>
-        <li>
-          <a href="contact.html" class="navbar-link" data-nav-link>Contact</a>
-        </li>
-  
-      </ul>
-    </div>
-  
-  </nav> -->
-  
 
   <!-- Main Content -->
   <div class="container">
@@ -175,7 +139,24 @@
           <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea>
         </div>
         <input type="submit" value="Submit">
+
+        <input type="submit" value="Home" onclick="window.location.href='index.html';">
       </form>
+      <!-- Loading Spinner -->
+      <div class="spinner" id="spinner">
+        <figure class="hero-banner">
+          <img src="https://nithin4599.github.io/faizal-semi-final/assets/images/message.gif" alt="Remote Control GIF" style="width: 100%; height: auto; max-width: 90px; max-height: 90px;" />
+      
+          <style>
+            @media (max-width: 768px) {
+              .hero-banner img {
+                max-width: 30px;
+                max-height: 30px;
+              }
+            }
+          </style>
+        </figure>
+      </div>
     </div>
     <div class="map-container">
       <!-- Replace the iframe src with your Google Maps embed code -->
@@ -188,6 +169,9 @@
     function submitForm(event) {
       event.preventDefault();
       const form = document.forms['contact-form'];
+      const spinner = document.getElementById('spinner');
+      spinner.style.display = 'block'; // Show loading spinner
+
       const scriptURL = 'https://script.google.com/macros/s/AKfycbxmB2s7UXvYjvuyfV0Prq1YiFRKL7UbDOnJhs8BLXEhWcsx9J7C0A0W6AZaGrHXA3-V/exec';
 
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
@@ -199,6 +183,9 @@
         .catch(error => {
           console.error('Error!', error.message);
           alert("Oops! Something went wrong.");
+        })
+        .finally(() => {
+          spinner.style.display = 'none'; // Hide loading spinner
         });
     }
   </script>
