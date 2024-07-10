@@ -5,1203 +5,206 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Winger</title>
+  <title>WingerIT</title>
+  <link rel="shortcut icon" href="./favicon-winger.svg" type="image/svg+xml">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-  <!-- 
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./fav.svg" type="image/svg+xml">
-
-  <!-- 
-    - custom css link
-  -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
-  <!-- 
-    - google font link
-  -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <style>
+    body {
+      font-family: 'Nunito Sans', Arial, sans-serif; /* Adjust font stack */
+      background-image: url('./assets/images/bgphoto.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 900px;
+      margin: 50px auto;
+      background-color: rgba(255, 255, 255, 0.9); /* Added transparency */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-container {
+      width: 45%;
+    }
+    .map-container {
+      width: 45%;
+      height: 485px; /* Adjust height as needed */
+    }
+    h4 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #333333;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+      resize: none;
+    }
+    textarea {
+      min-height: 100px;
+    }
+    input[type="submit"] {
+      background-color: rgb(32, 57, 138);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+    /* Media Query for Mobile Devices */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .form-container, .map-container {
+        width: 100%;
+        padding: 10px;
+      }
+      .map-container {
+        height: 300px; /* Adjust height for smaller screens */
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- 
-    - #HEADER
-  -->
+  <!-- Header -->
+  <!-- <nav class="navbar" data-navbar>
 
-  <header class="header" data-header>
-
-    <div class="overlay" data-overlay></div>
-
-    <div class="header-top">
-      <div class="container">
-
-        <ul class="header-top-list">
-
-
-
-        </ul>
-<!-- 
-        <div class="wrapper">
-          <ul class="header-top-social-list"> -->
-
-            <!-- <li>
-              <a  class="header-top-social-link">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a  class="header-top-social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a  class="header-top-social-link">
-                <ion-icon name="logo-instagram"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a  class="header-top-social-link">
-                <ion-icon name="logo-pinterest"></ion-icon>
-              </a>
-            </li> -->
-<!-- 
-          </ul>
-
-        </div> -->
-
-      </div>
+    <div class="navbar-top">
+  
+      <a class="logo">
+        <img src="./assets/images/logo.png" alt="logo">
+      </a>
+  
+      <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+  
     </div>
-
-    <div class="header-bottom">
-      <div class="container">
-
-        <a href="#" class="logo">
-          <img src="./assets/images/logo.png" alt="Homeverse logo">
-        </a>
-
-        <nav class="navbar" data-navbar>
-
-          <div class="navbar-top">
-
-            <a href="#" class="logo">
-              <img src="./assets/images/logo.png" alt="Homeverse logo">
-            </a>
-
-            <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-          </div>
-
-          <div class="navbar-bottom">
-            <ul class="navbar-list">
-
-              <li>
-                <a href="#home" class="navbar-link" data-nav-link>Home</a>
-              </li>
-
-              <li>
-                <a href="#about" class="navbar-link" data-nav-link>About</a>
-              </li>
-
-              <li>
-                <a href="#service" class="navbar-link" data-nav-link>Service</a>
-              </li>
-
-              <li>
-                <a href="#property" class="navbar-link" data-nav-link>Expertise</a>
-              </li>
-
-              <li>
-                <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
-              </li>
-
-              <li>
-                <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
-              </li>
-
-            </ul>
-          </div>
-
-        </nav>
-
-        <div class="header-bottom-actions">
-
-          <button class="header-bottom-actions-btn" aria-label="Search">
-            <ion-icon name="search-outline"></ion-icon>
-
-            <span>Search</span>
-          </button>
-
-          <button class="header-bottom-actions-btn" aria-label="Profile">
-            <ion-icon name="person-outline"></ion-icon>
-
-            <span>Profile</span>
-          </button>
-
-          <button class="header-bottom-actions-btn" aria-label="Cart">
-            <ion-icon name="cart-outline"></ion-icon>
-
-            <span>Cart</span>
-          </button>
-
-          <button class="header-bottom-actions-btn" data-nav-open-btn aria-label="Open Menu">
-            <ion-icon name="menu-outline"></ion-icon>
-
-            <span>Menu</span>
-          </button>
-
-        </div>
-
-      </div>
+  
+    <div class="navbar-bottom">
+      <ul class="navbar-list">
+  
+        <li>
+          <a href="#home" class="navbar-link" data-nav-link>Home</a>
+        </li>
+  
+        <li>
+          <a href="#about" class="navbar-link" data-nav-link>About</a>
+        </li>
+        <li>
+          <a href="#expertise" class="navbar-link" data-nav-link>Expertise</a>
+        </li>
+        <li>
+          <a href="#service" class="navbar-link" data-nav-link>Service</a>
+        </li>
+        <li>
+          <a href="#blog" class="navbar-link" data-nav-link>Our Work</a>
+        </li>
+        <li>
+          <a href="contact.html" class="navbar-link" data-nav-link>Contact</a>
+        </li>
+  
+      </ul>
     </div>
+  
+  </nav> -->
+  
 
-  </header>
-
-
-
-
-
-  <main>
-    <article>
-
-      <!-- 
-        - #HERO
-      -->
-
-      <section class="hero" id="home">
-        <div class="container">
-
-          <div class="hero-content">
-
-            <p class="hero-subtitle">
-              
-              <ion-icon name="analytics-outline"></ion-icon>
-
-              <span>Embedded & Software Solutions</span>
-            </p>
-
-            <h2 class="h1 hero-title">Innovating Technology, Empowering Your Success</h2>
-
-            <p class="hero-text">
-              Technology bridges the gap between what we can dream and what we can achieve. In every code line and circuit, we shape the future.
-            </p>
-
-            <button class="btn">Connect Now</button>
-
-          </div>
-
-          <figure class="hero-banner">
-            <img src="./assets/images/pngegg.png" alt="Modern house model" class="w-100">
-          </figure>
-
+  <!-- Main Content -->
+  <div class="container">
+    <div class="form-container">
+      <form method="POST" action="https://script.google.com/macros/s/AKfycbxmB2s7UXvYjvuyfV0Prq1YiFRKL7UbDOnJhs8BLXEhWcsx9J7C0A0W6AZaGrHXA3-V/exec" name="contact-form" onsubmit="submitForm(event)">
+        <h4>Contact Us</h4>
+        <div class="form-group">
+          <label for="your-name">Name:</label>
+          <input type="text" id="your-name" name="your-name" placeholder="Enter your name" required>
         </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #ABOUT
-      -->
-
-      <section class="about" id="about">
-        <div class="container">
-
-          <figure class="about-banner">
-            <img src="./assets/images/bannner1.jpg" alt="House interior">
-
-          </figure>
-
-          <div class="about-content">
-
-            <p class="section-subtitle">About Us</p>
-
-            <h2 class="h2 section-title">Transforming imagination into technological reality.</h2>
-
-            <p class="about-text">
-              We are a team of visionary developers dedicated to transforming imagination into reality through the powerful tool of technology.
-            </p>
-
-            <ul class="about-list">
-
-              <li class="about-item">
-                <div class="about-item-icon">
-                  <ion-icon name="wifi-outline"></ion-icon>
-                </div>
-
-                <p class="about-item-text">IoT Solutions</p>
-              </li>
-
-              <li class="about-item">
-                <div class="about-item-icon">
-                  <ion-icon name="phone-portrait-outline"></ion-icon>
-                </div>
-
-                <p class="about-item-text">Software Solutions</p>
-              </li>
-
-              <li class="about-item">
-                <div class="about-item-icon">
-                  <ion-icon name="git-network-outline"></ion-icon>
-                </div>
-
-                <p class="about-item-text">Ai Solutions</p>
-              </li>
-
-              <li class="about-item">
-                <div class="about-item-icon">
-                  <ion-icon name="logo-react"></ion-icon>
-                </div>
-
-                <p class="about-item-text">Web Solutions</p>
-              </li>
-
-            </ul>
-
-            <p class="callout">
-              "We specialize in resolving your technical challenges with precision and expertise, ensuring seamless solutions."
-            </p>
-
-            <a href="#service" class="btn">Our Services</a>
-
-          </div>
-
+        <div class="form-group">
+          <label for="your-number">Phone Number:</label>
+          <input type="text" id="your-number" name="your-number" placeholder="Enter your phone number" required>
         </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #SERVICE
-      -->
-
-      <section class="service" id="service">
-        <div class="container">
-
-          <p class="section-subtitle">endeavor</p>
-
-          <h2 class="h2 section-title">Our Services</h2>
-
-          <ul class="service-list">
-
-            <li>
-              <div class="service-card">
-
-                <div class="card-icon">
-                  <img src="./assets/images/undraw_progressive_app_m9ms (2).png" alt="Service icon">
-                </div>
-
-                <h3 class="h3 card-title">
-                  <a href="#">Ai/ML</a>
-                </h3>
-
-                <p class="card-text">
-                  We are at the forefront of AI-ML project development, pioneering advanced solutions to revolutionize industries and drive transformative outcomes.
-                </p>
-
-                <a href="#" class="card-link">
-                 
-
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </a>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card">
-
-                <div class="card-icon">
-                  <img src="./assets/images/a.png" alt="Service icon">
-                </div>
-
-                <h3 class="h3 card-title">
-                  <a href="#">Embedded Solutions</a>
-                </h3>
-
-                <p class="card-text">
-                  We lead the industry in developing cutting-edge embedded solutions, including automation, to optimize operations and drive innovation.
-                </p>
-
-                <a href="#" class="card-link">
-                  
-
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </a>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card">
-
-                <div class="card-icon">
-                  <img src="./assets/images/ele (1).png" alt="Service icon">
-                </div>
-
-                <h3 class="h3 card-title">
-                  <a href="#">Full-Stack</a>
-                </h3>
-
-                <p class="card-text">
-                  We excel in crafting superior web solutions, leveraging our expertise to deliver seamless digital experiences that drive business success.
-                </p>
-
-                <a href="#" class="card-link">
-                  
-
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </a>
-
-              </div>
-            </li>
-
-          </ul>
-
+        <div class="form-group">
+          <label for="your-email">Email:</label>
+          <input type="email" id="your-email" name="your-email" placeholder="Enter your email" required>
         </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #PROPERTY
-      -->
-
-      <section class="property" id="property">
-        <div class="container">
-
-          <p class="section-subtitle">Development</p>
-
-          <h2 class="h2 section-title">Our Expertise</h2>
-
-          <ul class="property-list has-scrollbar">
-
-            <li>
-              <div class="property-card">
-
-                <figure class="card-banner">
-
-                  <a href="#">
-                    <img src="./assets/images/iot.jpg" alt="New Apartment Nice View" class="w-100">
-                  </a>
-
-
-                  <div class="banner-actions">
-
-                   
-
-                    
-
-                  </div>
-
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-price">
-                    <strong>Home Automation</strong>
-                  </div>
-
-                  <h3 class="h3 card-title">
-                    <a href="#">Embeded Development & IOT Solutions.</a>
-                  </h3>
-
-                  <p class="card-text">
-                    Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood
-                  </p>
-
-                  <ul class="card-list">
-
-                
-
-                  </ul>
-
-                </div>
-
-                <div class="card-footer">
-
-              
-
-                 
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="property-card">
-
-                <figure class="card-banner">
-
-                  <a href="#">
-                    <img src="./assets/images/ml.jpg" alt="Modern Apartments" class="w-100">
-                  </a>
-
-
-                  <div class="banner-actions">
-
-
-                  </div>
-
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-price">
-                    <strong>Web Development</strong>
-                  </div>
-
-                  <h3 class="h3 card-title">
-                    <a href="#">Real Time website development</a>
-                  </h3>
-
-                  <p class="card-text">
-                    Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood
-                  </p>
-
-                  <ul class="card-list">
-
-
-                  </ul>
-
-                </div>
-
-                <div class="card-footer">
-
-                  <div class="card-author">
-
-              
-
-                    <div>
-                     
-                    </div>
-
-                  </div>
-
-                  <div class="card-footer-actions">
-
-                  
-
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="property-card">
-
-                <figure class="card-banner">
-
-                  <a href="#">
-                    <img src="./assets/images/fsd.jpg" alt="Comfortable Apartment" class="w-100">
-                  </a>
-
-
-                  <div class="banner-actions">
-
-                 
-                 
-
-                  
-
-                  </div>
-
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-price">
-                    <strong>Ai/ML Development</strong>
-                  </div>
-
-                  <h3 class="h3 card-title">
-                    <a href="#">ML projects with unparalleled precision and accuracy.</a>
-                  </h3>
-
-                  <p class="card-text">
-                    Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood
-                  </p>
-
-                  <ul class="card-list">
-
-                   
-
-                  </ul>
-
-                </div>
-
-                <div class="card-footer">
-
-                  <div class="card-author">
-
-                    
-
-                    <div>
-                  
-                    </div>
-
-                  </div>
-
-                
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="property-card">
-
-                <figure class="card-banner">
-
-                  <a href="#">
-                    <img src="./assets/images/iot.jpg" alt="Luxury villa in Rego Park" class="w-100">
-                  </a>
-
-
-                  <div class="banner-actions">
-
-                   
-
-                 
-
-
-                  </div>
-
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-price">
-                    <strong>Robotics Development</strong>
-                  </div>
-
-                  <h3 class="h3 card-title">
-                    <a href="#">We offer a diverse range of robotics solutions.</a>
-                  </h3>
-
-                  <p class="card-text">
-                    We Provide various robotics Solutions.
-                  </p>
-
-                  <ul class="card-list">
-
-                
-
-                  </ul>
-
-                </div>
-
-                <div class="card-footer">
-
-                  <div class="card-author">
-
-                
-
-                  </div>
-
-                  <div class="card-footer-actions">
-
-                    
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea>
         </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #FEATURES
-      -->
-
-      <section class="features">
-        <div class="container">
-
-          <p class="section-subtitle">Our Aminities</p>
-
-          <h2 class="h2 section-title">Building Aminities</h2>
-
-          <ul class="features-list">
-
-            <li>
-              <a href="#" class="features-card">
-
-                <div class="card-icon">
-                  <ion-icon name="car-sport-outline"></ion-icon>
-                </div>
-
-                <h3 class="card-title">Smart Parking</h3>
-
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
-
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="features-card">
-
-                <div class="card-icon">
-                  <ion-icon name="water-outline"></ion-icon>
-                </div>
-
-                <h3 class="card-title">Smart Water Management</h3>
-
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
-
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="features-card">
-
-                <div class="card-icon">
-                  <ion-icon name="shield-checkmark-outline"></ion-icon>
-                </div>
-
-                <h3 class="card-title">Smart Security</h3>
-
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
-
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="features-card">
-
-                <div class="card-icon">
-                  <ion-icon name="fitness-outline"></ion-icon>
-                </div>
-
-                <h3 class="card-title">Medical Monitring System</h3>
-
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
-
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="features-card">
-
-                <div class="card-icon">
-                  <ion-icon name="library-outline"></ion-icon>
-                </div>
-
-                <h3 class="card-title">Innovation</h3>
-
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
-
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="features-card">
-
-                <div class="card-icon">
-                  <ion-icon name="bed-outline"></ion-icon>
-                </div>
-
-                <h3 class="card-title">Sleep Trackers</h3>
-
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
-
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="features-card">
-
-                <div class="card-icon">
-                  <ion-icon name="home-outline"></ion-icon>
-                </div>
-
-                <h3 class="card-title">Smart Home Automation</h3>
-
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
-
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="features-card">
-
-                <div class="card-icon">
-                  <ion-icon name="football-outline"></ion-icon>
-                </div>
-
-                <h3 class="card-title">Sport Inovation</h3>
-
-                <div class="card-btn">
-                  <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #BLOG
-      -->
-
-      <section class="blog" id="blog">
-        <div class="container">
-
-          <p class="section-subtitle">News & Blogs</p>
-
-          <h2 class="h2 section-title">Leatest News Feeds</h2>
-
-          <ul class="blog-list has-scrollbar">
-
-            <li>
-              <div class="blog-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/boston.jpg" alt="The Most Inspiring Interior Design Of 2021" class="w-100">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-content-top">
-
-                    <ul class="card-meta-list">
-
-                      <li>
-                        <a href="#" class="card-meta-link">
-                          <ion-icon name="person"></ion-icon>
-
-                          <span>by: Admin</span>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#" class="card-meta-link">
-                          <ion-icon name="pricetags"></ion-icon>
-
-                          <span>Interior</span>
-                        </a>
-                      </li>
-
-                    </ul>
-
-                    <h3 class="h3 blog-title">
-                      <a href="#">The Most Inspiring Interior Design Of 2021</a>
-                    </h3>
-
-                  </div>
-
-                  <div class="blog-content-bottom">
-                    <div class="publish-date">
-                      <ion-icon name="calendar"></ion-icon>
-
-                      <time datetime="2022-27-04">Apr 27, 2022</time>
-                    </div>
-
-                    <a href="#" class="read-more-btn">Read More</a>
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="blog-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/plan.jpg" alt="Recent Commercial Real Estate Transactions" class="w-100">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-content-top">
-
-                    <ul class="card-meta-list">
-
-                      <li>
-                        <a href="#" class="card-meta-link">
-                          <ion-icon name="person"></ion-icon>
-
-                          <span>by: Admin</span>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#" class="card-meta-link">
-                          <ion-icon name="pricetags"></ion-icon>
-
-                          <span>Estate</span>
-                        </a>
-                      </li>
-
-                    </ul>
-
-                    <h3 class="h3 blog-title">
-                      <a href="#">Recent Commercial Real Estate Transactions</a>
-                    </h3>
-
-                  </div>
-
-                  <div class="blog-content-bottom">
-                    <div class="publish-date">
-                      <ion-icon name="calendar"></ion-icon>
-
-                      <time datetime="2022-27-04">Apr 27, 2022</time>
-                    </div>
-
-                    <a href="#" class="read-more-btn">Read More</a>
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="blog-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/work.jpg" alt="Renovating a Living Room? Experts Share Their Secrets"
-                    class="w-100">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-content-top">
-
-                    <ul class="card-meta-list">
-
-                      <li>
-                        <a href="#" class="card-meta-link">
-                          <ion-icon name="person"></ion-icon>
-
-                          <span>by: Admin</span>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="#" class="card-meta-link">
-                          <ion-icon name="pricetags"></ion-icon>
-
-                          <span>Room</span>
-                        </a>
-                      </li>
-
-                    </ul>
-
-                    <h3 class="h3 blog-title">
-                      <a href="#">Renovating a Living Room? Experts Share Their Secrets</a>
-                    </h3>
-
-                  </div>
-
-                  <div class="blog-content-bottom">
-                    <div class="publish-date">
-                      <ion-icon name="calendar"></ion-icon>
-
-                      <time datetime="2022-27-04">Apr 27, 2022</time>
-                    </div>
-
-                    <a href="#" class="read-more-btn">Read More</a>
-                  </div>
-
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #CTA
-      -->
-
-      <section class="cta">
-        <div class="container">
-
-          <div class="cta-card">
-            <div class="card-content">
-              <h2 class="h2 card-title">Looking for a dream home?</h2>
-
-              <p class="card-text">We can help you realize your dream of a new home</p>
-            </div>
-
-            <button class="btn cta-btn">
-              <span>Explore Properties</span>
-
-              <ion-icon name="arrow-forward-outline"></ion-icon>
-            </button>
-          </div>
-
-        </div>
-      </section>
-
-    </article>
-  </main>
-
-
-
-
-
-  <!-- 
-    - #FOOTER
-  -->
-
-  <footer class="footer">
-
-    <div class="footer-top">
-      <div class="container">
-
-        <div class="footer-brand">
-
-          <a href="#" class="logo">
-            <img src="./assets/images/logo.png" alt="Homeverse logo">
-          </a>
-
-          <p class="section-text">
-            Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.
-          </p>
-
-          <ul class="contact-list">
-
-            <li>
-              <a href="#" class="contact-link">
-                <ion-icon name="location-outline"></ion-icon>
-
-                <address>Brooklyn, New York, United States</address>
-              </a>
-            </li>
-
-            <li>
-              <a href="tel:+0123456789" class="contact-link">
-                <ion-icon name="call-outline"></ion-icon>
-
-                <span>+0123-456789</span>
-              </a>
-            </li>
-
-            <li>
-              <a href="mailto:contact@homeverse.com" class="contact-link">
-                <ion-icon name="mail-outline"></ion-icon>
-
-                <span>contact@homeverse.com</span>
-              </a>
-            </li>
-
-          </ul>
-
-          <ul class="social-list">
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-linkedin"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-youtube"></ion-icon>
-              </a>
-            </li>
-
-          </ul>
-
-        </div>
-
-        <div class="footer-link-box">
-
-          <ul class="footer-list">
-
-            <li>
-              <p class="footer-list-title">Company</p>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">About</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Blog</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">All Products</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Locations Map</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">FAQ</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Contact us</a>
-            </li>
-
-          </ul>
-
-          <ul class="footer-list">
-
-            <li>
-              <p class="footer-list-title">Services</p>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Order tracking</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Wish List</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Login</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">My account</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Terms & Conditions</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Promotional Offers</a>
-            </li>
-
-          </ul>
-
-          <ul class="footer-list">
-
-            <li>
-              <p class="footer-list-title">Customer Care</p>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Login</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">My account</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Wish List</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Order tracking</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">FAQ</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Contact us</a>
-            </li>
-
-          </ul>
-
-        </div>
-
-      </div>
+        <input type="submit" value="Submit">
+      </form>
     </div>
-
-    <div class="footer-bottom">
-      <div class="container">
-
-        <p class="copyright">
-          &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
-        </p>
-
-      </div>
+    <div class="map-container">
+      <!-- Replace the iframe src with your Google Maps embed code -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.1441329514557!2d77.62391041533793!3d13.025929090770792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1717436a19bd%3A0x4dbd9714d0394b49!2s13.025929%2C%2077.626099!5e0!3m2!1sen!2sin!4v1625810422525!5m2!1sen!2sin" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
     </div>
+  </div>
 
-  </footer>
+  <!-- JavaScript -->
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      const form = document.forms['contact-form'];
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxmB2s7UXvYjvuyfV0Prq1YiFRKL7UbDOnJhs8BLXEhWcsx9J7C0A0W6AZaGrHXA3-V/exec';
 
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          console.log('Success!', response);
+          alert("Thank you! We will get back to you ASAP.");
+          form.reset();
+        })
+        .catch(error => {
+          console.error('Error!', error.message);
+          alert("Oops! Something went wrong.");
+        });
+    }
+  </script>
 
-
-
-
-  <!-- 
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
