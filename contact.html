@@ -1,12 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Contact Us</title>
-  <link rel="icon" href="./favicon-winger.svg" type="image/svg+xml">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WingerIT</title>
+  <link rel="shortcut icon" href="./favicon-winger.svg" type="image/svg+xml">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Nunito Sans', Arial, sans-serif; /* Adjust font stack */
       background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
     }
     .container {
       display: flex;
@@ -23,7 +44,7 @@
     }
     .map-container {
       width: 45%;
-      height: 450px; /* Adjust height as needed */
+      height: 485px; /* Adjust height as needed */
     }
     h4 {
       text-align: center;
@@ -46,7 +67,7 @@
       min-height: 100px;
     }
     input[type="submit"] {
-      background-color: rgb(32,57,138);
+      background-color: rgb(32, 57, 138);
       color: white;
       padding: 12px 20px;
       border: none;
@@ -66,9 +87,70 @@
       display: block;
       margin-bottom: 5px;
     }
+    /* Media Query for Mobile Devices */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .form-container, .map-container {
+        width: 100%;
+        padding: 10px;
+      }
+      .map-container {
+        height: 300px; /* Adjust height for smaller screens */
+      }
+    }
   </style>
 </head>
+
 <body>
+
+  <!-- Header -->
+  <!-- <nav class="navbar" data-navbar>
+
+    <div class="navbar-top">
+  
+      <a class="logo">
+        <img src="./assets/images/logo.png" alt="logo">
+      </a>
+  
+      <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+  
+    </div>
+  
+    <div class="navbar-bottom">
+      <ul class="navbar-list">
+  
+        <li>
+          <a href="#home" class="navbar-link" data-nav-link>Home</a>
+        </li>
+  
+        <li>
+          <a href="#about" class="navbar-link" data-nav-link>About</a>
+        </li>
+        <li>
+          <a href="#expertise" class="navbar-link" data-nav-link>Expertise</a>
+        </li>
+        <li>
+          <a href="#service" class="navbar-link" data-nav-link>Service</a>
+        </li>
+        <li>
+          <a href="#blog" class="navbar-link" data-nav-link>Our Work</a>
+        </li>
+        <li>
+          <a href="contact.html" class="navbar-link" data-nav-link>Contact</a>
+        </li>
+  
+      </ul>
+    </div>
+  
+  </nav> -->
+  
+
+  <!-- Main Content -->
   <div class="container">
     <div class="form-container">
       <form method="POST" action="https://script.google.com/macros/s/AKfycbxmB2s7UXvYjvuyfV0Prq1YiFRKL7UbDOnJhs8BLXEhWcsx9J7C0A0W6AZaGrHXA3-V/exec" name="contact-form" onsubmit="submitForm(event)">
@@ -93,11 +175,12 @@
       </form>
     </div>
     <div class="map-container">
-      <!-- Replace the iframe src with your Google Maps embed code   13.025929, 77.626099-->
+      <!-- Replace the iframe src with your Google Maps embed code -->
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.1441329514557!2d77.62391041533793!3d13.025929090770792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1717436a19bd%3A0x4dbd9714d0394b49!2s13.025929%2C%2077.626099!5e0!3m2!1sen!2sin!4v1625810422525!5m2!1sen!2sin" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
     </div>
   </div>
 
+  <!-- JavaScript -->
   <script>
     function submitForm(event) {
       event.preventDefault();
@@ -116,5 +199,9 @@
         });
     }
   </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+
 </html>
